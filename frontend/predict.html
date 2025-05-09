@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Antenna Predictor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Antenna Performance Predictor</h2>
+    <form id="predict-form" class="grid-form">
+      <input type="number" step="any" name="Length_mm" placeholder="Length (mm)" required>
+      <input type="number" step="any" name="Width_mm" placeholder="Width (mm)" required>
+      <input type="number" step="any" name="Height_mm" placeholder="Height (mm)" required>
+      <input type="number" step="any" name="Epsilon_r" placeholder="Epsilon_r" required>
+      <input type="number" step="any" name="Operating_Frequency_GHz" placeholder="Frequency (GHz)" required>
+      <input type="text" step="any" name="Antenna_Type" placeholder="Antenna Type" required>
+      <input type="number" step="any" name="Aspect_Ratio" placeholder="Aspect Ratio" required>
+      <input type="number" step="any" name="Volume_mm3" placeholder="Volume (mm³)" required>
+      <input type="number" step="any" name="Feed_Ratio" placeholder="Feed Ratio" required>
+      <input type="number" step="any" name="Electrical_Length" placeholder="Electrical Length" required>
+      <input type="number" step="any" name="S11_dB" placeholder="S11 (dB)" required>
+      <input type="number" step="any" name="Bandwidth_GHz" placeholder="Bandwidth (GHz)" required>
+      <input type="number" step="any" name="Traffic_Capacity_Mbps" placeholder="Traffic Capacity (Mbps)" required>
+      <button type="submit" class="rainbow-btn">Predict</button>
+    </form>
+
+    <div class="results">
+      <h3>Predicted Results:</h3>
+      <p><strong>Efficiency:</strong> <span id="efficiency">--</span></p>
+      <p><strong>Gain:</strong> <span id="gain">--</span></p>
+      <p><strong>Cost:</strong> <span id="cost">--</span></p>
+    </div>
+
+ 
+     <!-- Insight Images (Initially Hidden) -->
+  <div id="insight-section" class="insights" style="display: none;">
+    <h3 class="insight-title">Efficiency Insights</h3>
+    <img src="/Efficiency_insights.jpg" alt="Efficiency Insights" class="insight-img" />
+
+    <h3 class="insight-title">Gain Insights</h3>
+    <img src="/Gain_insights.jpg" alt="Gain Insights" class="insight-img" />
+
+    <h3 class="insight-title">Cost Insights</h3>
+    <img src="/Cost_insights.jpg" alt="Cost Insights" class="insight-img" />
+  </div>
+
+  
+    <h3>Previous Predictions</h3>
+    <table id="history-table" class="history-table"></table>
+
+    <button onclick="logout()" class="rainbow-btn">Logout</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
