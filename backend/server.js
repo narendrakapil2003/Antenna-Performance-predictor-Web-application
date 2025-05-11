@@ -7,7 +7,7 @@ const path = require("path");
 const { spawn } = require("child_process");
 
 const app = express();
-const PORT = 3000;
+const port = process.env.PORT || 3000;
 
 // PostgreSQL setup
 const pool = new Pool({
